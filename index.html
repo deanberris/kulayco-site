@@ -1,0 +1,97 @@
+---
+layout: default
+---
+<main class="page">
+  <section class="hero">
+    <div class="hero__visual" aria-hidden="true">
+      <div class="map">
+        <div class="map__grid"></div>
+        <div class="blob blob--coral"></div>
+        <div class="blob blob--blue"></div>
+        <div class="blob blob--yellow"></div>
+        <div class="blob blob--violet"></div>
+        <div class="swirl">
+          <div class="swirl__ring"></div>
+        </div>
+        <div class="wheel" aria-hidden="true"></div>
+      </div>
+      <p class="hero__visual-note">Animated preview — real footage landing soon.</p>
+    </div>
+
+    <div class="hero__copy">
+      <h1 class="hero__tagline">Colour your world.</h1>
+      <p class="hero__description">
+        Pin a colour to where you are. See what colours the world is wearing.
+      </p>
+      <a class="app-store-badge" href="#" aria-label="Download on the App Store (coming soon)">
+        <span class="app-store-badge__small">Download on the</span>
+        <span class="app-store-badge__large">App Store</span>
+        <span class="app-store-badge__hint">Coming soon</span>
+      </a>
+    </div>
+  </section>
+
+  <section class="features">
+    <ul class="features__list">
+      <li class="feature">
+        <span class="feature__icon feature__icon--tap" aria-hidden="true"></span>
+        <p class="feature__text">One tap. Any colour. Your location.</p>
+      </li>
+      <li class="feature">
+        <span class="feature__icon feature__icon--mood" aria-hidden="true"></span>
+        <p class="feature__text">See your neighbourhood&rsquo;s mood.</p>
+      </li>
+      <li class="feature">
+        <span class="feature__icon feature__icon--quiet" aria-hidden="true"></span>
+        <p class="feature__text">No feed. No followers. Just colour.</p>
+      </li>
+    </ul>
+  </section>
+
+  <section class="screenshots" aria-label="App previews">
+    <h2 class="screenshots__title">A look inside</h2>
+    <p class="screenshots__subtitle">Real screenshots land once the iOS Simulator runtime is installed. Wireframes for now.</p>
+    <div class="screenshots__row">
+      <figure class="phone">
+        <div class="phone__frame">
+          <div class="phone__screen phone__screen--map">
+            <div class="phone__blob phone__blob--a"></div>
+            <div class="phone__blob phone__blob--b"></div>
+            <div class="phone__blob phone__blob--c"></div>
+            <div class="phone__swirl"></div>
+          </div>
+        </div>
+        <figcaption>Map with pinned colours</figcaption>
+      </figure>
+      <figure class="phone">
+        <div class="phone__frame">
+          <div class="phone__screen phone__screen--picker">
+            <div class="phone__wheel"></div>
+          </div>
+        </div>
+        <figcaption>Colour picker open</figcaption>
+      </figure>
+      <figure class="phone">
+        <div class="phone__frame">
+          <div class="phone__screen phone__screen--overlap">
+            <div class="phone__blob phone__blob--big-a"></div>
+            <div class="phone__blob phone__blob--big-b"></div>
+            <div class="phone__blob phone__blob--big-c"></div>
+          </div>
+        </div>
+        <figcaption>Overlapping entries</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="site-footer__inner">
+      <p class="site-footer__mark">Kulay</p>
+      <nav class="site-footer__nav" aria-label="Footer">
+        <a href="#">App Store</a>
+        <a href="{{ '/privacy.html' | relative_url }}">Privacy</a>
+      </nav>
+      <p class="site-footer__copy">&copy; {{ 'now' | date: '%Y' }} Kulay. Made with colour.</p>
+    </div>
+  </footer>
+</main>
