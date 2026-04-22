@@ -23,11 +23,22 @@ layout: default
       <p class="hero__description">
         Pin a colour to where you are. See what colours the world is wearing.
       </p>
-      <a class="app-store-badge" href="#" aria-label="Download on the App Store (coming soon)">
-        <span class="app-store-badge__small">Download on the</span>
-        <span class="app-store-badge__large">App Store</span>
-        <span class="app-store-badge__hint">Coming soon</span>
-      </a>
+      <div class="waitlist">
+        <h2 class="waitlist__headline">Join the waitlist</h2>
+        <p class="waitlist__copy">
+          Be first to colour your neighbourhood. We&rsquo;ll email you when Kulay launches.
+        </p>
+        <iframe
+          class="waitlist__frame"
+          data-tally-src="https://tally.so/embed/{{ site.tally_form_id }}?alignLeft=1&amp;hideTitle=1&amp;transparentBackground=1&amp;dynamicHeight=1"
+          loading="lazy"
+          width="100%"
+          height="260"
+          frameborder="0"
+          marginheight="0"
+          marginwidth="0"
+          title="Join the Kulay waitlist"></iframe>
+      </div>
     </div>
   </section>
 

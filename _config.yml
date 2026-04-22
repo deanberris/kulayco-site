@@ -3,6 +3,13 @@ tagline: Colour your world
 description: Pin a colour to where you are. See what colours the world is wearing.
 url: "https://kulay.co"
 
+# Tally.so waitlist form ID (the part after tally.so/r/ in the form URL).
+# Create the form at tally.so with fields: email (required), city (optional),
+# "Would you walk 30 min/day for a game?" (optional). In Tally's form
+# settings, set the submit button colour to #FF6B4A and background to
+# transparent so it matches the site palette.
+tally_form_id: REPLACE_WITH_TALLY_FORM_ID
+
 sass:
   style: compressed
 
