@@ -281,7 +281,7 @@ a {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .blob, .swirl, .swirl__ring, .wheel {
+  .blob, .swirl, .swirl__ring, .wheel, .confirm__badge {
     animation: none !important;
   }
   .wheel { opacity: 0; }
@@ -581,6 +581,78 @@ a {
   padding-top: 12px;
   border-top: 1px solid rgba(250, 250, 250, 0.1);
   margin-top: 12px;
+}
+
+// -----------------------------------------------------------------------------
+// Confirmation page (thank-you / waitlist success)
+// -----------------------------------------------------------------------------
+
+.confirm {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: clamp(48px, 8vw, 96px) clamp(24px, 6vw, 96px);
+}
+
+.confirm__inner {
+  max-width: 560px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 20px;
+}
+
+.confirm__badge {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: conic-gradient(from 0deg,
+    $blob-coral,
+    $blob-yellow,
+    $blob-green,
+    $blob-blue,
+    $blob-violet,
+    $blob-coral);
+  box-shadow: 0 8px 24px -8px rgba(26, 26, 26, 0.3);
+  animation: badge-spin 3.2s ease-in-out infinite;
+  margin-bottom: 4px;
+}
+
+@keyframes badge-spin {
+  0%, 100% { transform: scale(1) rotate(0deg); }
+  50%      { transform: scale(1.08) rotate(180deg); }
+}
+
+.confirm__headline {
+  font-size: clamp(44px, 7vw, 72px);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  margin: 0;
+  line-height: 1.02;
+}
+
+.confirm__subhead {
+  font-size: clamp(20px, 2.5vw, 26px);
+  font-weight: 600;
+  color: $ink;
+  margin: 0;
+}
+
+.confirm__incentive {
+  font-size: 17px;
+  color: $muted;
+  max-width: 36ch;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.confirm__widget {
+  width: 100%;
+  max-width: 480px;
+  margin-top: 8px;
 }
 
 // -----------------------------------------------------------------------------

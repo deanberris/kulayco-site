@@ -1,0 +1,42 @@
+---
+layout: default
+title: You're in
+description: "You're on the Kulay waitlist. Share to move up."
+---
+<link rel="stylesheet" type="text/css" href="https://prod-waitlist-widget.s3.us-east-2.amazonaws.com/getwaitlist.min.css">
+
+<main class="page">
+  <section class="confirm">
+    <div class="confirm__inner">
+
+      <div class="confirm__badge" aria-hidden="true"></div>
+
+      <h1 class="confirm__headline">You&#8217;re in!</h1>
+      <p class="confirm__subhead">Share to move up the list.</p>
+      <p class="confirm__incentive">
+        Get 3 friends in your area to sign up and you all get early access.
+      </p>
+
+      <div class="confirm__widget">
+        <div
+          id="getWaitlistContainer"
+          data-waitlist_id="{{ site.getwaitlist_id }}"
+          data-widget_type="WIDGET_1"></div>
+      </div>
+
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="site-footer__inner">
+      <p class="site-footer__mark">Kulay</p>
+      <nav class="site-footer__nav" aria-label="Footer">
+        <a href="{{ '/' | relative_url }}">Home</a>
+        <a href="{{ '/privacy.html' | relative_url }}">Privacy</a>
+      </nav>
+      <p class="site-footer__copy">&copy; {{ 'now' | date: '%Y' }} Kulay. Made with colour.</p>
+    </div>
+  </footer>
+</main>
+
+<script src="https://prod-waitlist-widget.s3.us-east-2.amazonaws.com/getwaitlist.min.js"></script>

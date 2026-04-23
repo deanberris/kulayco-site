@@ -10,6 +10,12 @@ url: "https://kulay.co"
 # transparent so it matches the site palette.
 tally_form_id: REPLACE_WITH_TALLY_FORM_ID
 
+# Getwaitlist.com waitlist ID (find it in your Getwaitlist dashboard).
+# After creating a waitlist at getwaitlist.com, configure the Tally form's
+# "redirect after submit" URL to: https://kulay.co/thankyou.html?email={email}
+# (use Tally's {email} variable to pre-fill the Getwaitlist widget).
+getwaitlist_id: REPLACE_WITH_GETWAITLIST_ID
+
 sass:
   style: compressed
 
