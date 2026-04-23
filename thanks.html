@@ -1,0 +1,67 @@
+---
+layout: default
+title: "You're on the list"
+description: "Thanks for joining the Kulay waitlist. We'll be in touch when Kulay launches in your city."
+permalink: /thanks/
+---
+
+<div class="page">
+  <main class="thanks">
+    <div class="thanks__blobs" aria-hidden="true">
+      <div class="thanks__blob thanks__blob--coral"></div>
+      <div class="thanks__blob thanks__blob--blue"></div>
+      <div class="thanks__blob thanks__blob--violet"></div>
+    </div>
+
+    <div class="thanks__content">
+      <div class="thanks__icon" aria-hidden="true">
+        <svg width="56" height="56" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="28" cy="28" r="28" fill="#FF6B4A" fill-opacity="0.12"/>
+          <path d="M17 28.5L24 35.5L39 20.5" stroke="#FF6B4A" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+
+      <h1 class="thanks__heading">You're on the list.</h1>
+
+      <p class="thanks__body">
+        We'll email you when Kulay launches in your city.<br>
+        In the meantime — tell a friend and help us launch sooner.
+      </p>
+
+      <div class="thanks__share">
+        <p class="thanks__share-label">Share the waitlist</p>
+        <div class="thanks__share-buttons">
+          <a class="thanks__share-btn thanks__share-btn--twitter"
+             href="https://twitter.com/intent/tweet?text=I%20just%20joined%20the%20Kulay%20waitlist%20%E2%80%94%20a%20game%20where%20you%20claim%20territory%20by%20walking.%20Join%20me%3A&url=https%3A%2F%2Fkulay.co"
+             target="_blank" rel="noopener noreferrer">
+            Share on X
+          </a>
+          <a class="thanks__share-btn thanks__share-btn--copy"
+             href="#"
+             id="copy-link"
+             data-url="https://kulay.co">
+            Copy link
+          </a>
+        </div>
+      </div>
+
+      <a class="thanks__back" href="/">← Back to kulay.co</a>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <a href="/privacy">Privacy policy</a>
+  </footer>
+</div>
+
+<script>
+  document.getElementById('copy-link').addEventListener('click', function(e) {
+    e.preventDefault();
+    var url = this.dataset.url;
+    navigator.clipboard.writeText(url).then(function() {
+      var btn = document.getElementById('copy-link');
+      btn.textContent = 'Copied!';
+      setTimeout(function() { btn.textContent = 'Copy link'; }, 2000);
+    });
+  });
+</script>
