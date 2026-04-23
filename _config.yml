@@ -1,0 +1,18 @@
+title: Kulay
+tagline: Colour your world
+description: Pin a colour to where you are. See what colours the world is wearing.
+url: "https://kulay.co"
+
+sass:
+  style: compressed
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - LICENSE
+  - .beads
+  - .runtime
+  - .claude
+  - .logs
+  - vendor
