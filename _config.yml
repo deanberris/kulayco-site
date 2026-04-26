@@ -8,7 +8,7 @@ url: "https://kulay.co"
 # "Would you walk 30 min/day for a game?" (optional). In Tally's form
 # settings, set the submit button colour to #FF6B4A and background to
 # transparent so it matches the site palette.
-tally_form_id: REPLACE_WITH_TALLY_FORM_ID
+tally_form_id: aQj9aq
 
 # Getwaitlist.com waitlist ID (find it in your Getwaitlist dashboard).
 # After creating a waitlist at getwaitlist.com, configure the Tally form's
