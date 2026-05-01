@@ -56,22 +56,15 @@ a {
 // -----------------------------------------------------------------------------
 
 .hero {
-  display: grid;
-  grid-template-columns: 1.1fr 1fr;
+  display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: clamp(32px, 6vw, 96px);
-  padding: clamp(32px, 6vw, 96px) clamp(24px, 6vw, 96px);
-  min-height: min(100vh, 820px);
-  max-width: 1280px;
+  gap: clamp(32px, 5vw, 64px);
+  padding: clamp(48px, 6vw, 96px) clamp(24px, 6vw, 96px) clamp(32px, 4vw, 56px);
+  max-width: 900px;
   margin: 0 auto;
   width: 100%;
-
-  @media (max-width: 860px) {
-    grid-template-columns: 1fr;
-    min-height: auto;
-    padding-top: 48px;
-    padding-bottom: 48px;
-  }
+  text-align: center;
 }
 
 .hero__visual {
@@ -79,6 +72,7 @@ a {
   flex-direction: column;
   gap: 14px;
   align-items: center;
+  width: 100%;
 }
 
 .hero__visual-note {
@@ -90,12 +84,7 @@ a {
 }
 
 .hero__copy {
-  max-width: 520px;
-
-  @media (max-width: 860px) {
-    margin: 0 auto;
-    text-align: center;
-  }
+  max-width: 620px;
 }
 
 .hero__tagline {
@@ -109,26 +98,26 @@ a {
 .hero__description {
   font-size: clamp(18px, 2.2vw, 22px);
   color: $ink;
-  margin: 0 0 36px;
-  max-width: 30ch;
-
-  @media (max-width: 860px) {
-    margin-left: auto;
-    margin-right: auto;
-  }
+  margin: 0 auto;
+  max-width: 36ch;
 }
 
 // -----------------------------------------------------------------------------
-// Waitlist (hero CTA)
+// Waitlist section (below hero)
 // -----------------------------------------------------------------------------
 
-.waitlist {
-  max-width: 460px;
+.waitlist-section {
+  border-top: 1px solid $hairline;
+  background: #fff;
+  padding: clamp(40px, 5vw, 80px) clamp(24px, 6vw, 96px);
+  display: flex;
+  justify-content: center;
+}
 
-  @media (max-width: 860px) {
-    margin-left: auto;
-    margin-right: auto;
-  }
+.waitlist {
+  max-width: 560px;
+  width: 100%;
+  text-align: center;
 }
 
 .waitlist__headline {
@@ -141,13 +130,8 @@ a {
 .waitlist__copy {
   color: $muted;
   font-size: 16px;
-  margin: 0 0 18px;
+  margin: 0 auto 18px;
   max-width: 38ch;
-
-  @media (max-width: 860px) {
-    margin-left: auto;
-    margin-right: auto;
-  }
 }
 
 .waitlist__frame {

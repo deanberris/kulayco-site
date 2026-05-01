@@ -3,6 +3,13 @@ layout: default
 ---
 <main class="page">
   <section class="hero">
+    <div class="hero__copy">
+      <h1 class="hero__tagline">Colour your world.</h1>
+      <p class="hero__description">
+        Pin a colour to where you are. See what colours the world is wearing.
+      </p>
+    </div>
+
     <div class="hero__visual" aria-hidden="true">
       <div class="map">
         <div class="map__grid"></div>
@@ -17,28 +24,24 @@ layout: default
       </div>
       <p class="hero__visual-note">Animated preview — real footage landing soon.</p>
     </div>
+  </section>
 
-    <div class="hero__copy">
-      <h1 class="hero__tagline">Colour your world.</h1>
-      <p class="hero__description">
-        Pin a colour to where you are. See what colours the world is wearing.
+  <section class="waitlist-section">
+    <div class="waitlist">
+      <h2 class="waitlist__headline">Join the waitlist</h2>
+      <p class="waitlist__copy">
+        Be first to colour your neighbourhood. We&rsquo;ll email you when Kulay launches.
       </p>
-      <div class="waitlist">
-        <h2 class="waitlist__headline">Join the waitlist</h2>
-        <p class="waitlist__copy">
-          Be first to colour your neighbourhood. We&rsquo;ll email you when Kulay launches.
-        </p>
-        <iframe
-          class="waitlist__frame"
-          data-tally-src="https://tally.so/embed/{{ site.tally_form_id }}?alignLeft=1&amp;hideTitle=1&amp;transparentBackground=1&amp;dynamicHeight=1"
-          loading="lazy"
-          width="100%"
-          height="260"
-          frameborder="0"
-          marginheight="0"
-          marginwidth="0"
-          title="Join the Kulay waitlist"></iframe>
-      </div>
+      <iframe
+        class="waitlist__frame"
+        data-tally-src="https://tally.so/embed/{{ site.tally_form_id }}?alignLeft=1&amp;hideTitle=1&amp;transparentBackground=1&amp;dynamicHeight=1"
+        loading="lazy"
+        width="100%"
+        height="260"
+        frameborder="0"
+        marginheight="0"
+        marginwidth="0"
+        title="Join the Kulay waitlist"></iframe>
     </div>
   </section>
 
