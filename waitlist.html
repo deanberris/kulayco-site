@@ -1,0 +1,43 @@
+---
+layout: default
+title: Join the Waitlist
+description: Be first to colour your neighbourhood. Sign up and we'll email you when Kulay launches.
+---
+<main class="page">
+  <section class="waitlist-page">
+    <div class="waitlist-page__inner">
+      <p class="waitlist-page__eyebrow">Kulay</p>
+      <h1 class="waitlist-page__headline">Be first to colour your world.</h1>
+      <p class="waitlist-page__pitch">
+        Kulay is a new kind of social map — one tap drops a colour wherever you are.
+        No feed, no followers, just a living heatmap of human presence.
+        Drop your email below and we'll reach out the moment we open the doors.
+      </p>
+
+      <div class="waitlist-page__form">
+        <iframe
+          class="waitlist__frame"
+          data-tally-src="https://tally.so/embed/{{ site.tally_form_id }}?alignLeft=1&amp;hideTitle=1&amp;transparentBackground=1&amp;dynamicHeight=1"
+          loading="lazy"
+          width="100%"
+          height="260"
+          frameborder="0"
+          marginheight="0"
+          marginwidth="0"
+          title="Join the Kulay waitlist"></iframe>
+      </div>
+
+      <p class="waitlist-page__back"><a href="{{ '/' | relative_url }}">&larr; Back to homepage</a></p>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="site-footer__inner">
+      <p class="site-footer__mark">Kulay</p>
+      <nav class="site-footer__nav" aria-label="Footer">
+        <a href="{{ '/privacy.html' | relative_url }}">Privacy</a>
+      </nav>
+      <p class="site-footer__copy">&copy; {{ 'now' | date: '%Y' }} Kulay. Made with colour.</p>
+    </div>
+  </footer>
+</main>

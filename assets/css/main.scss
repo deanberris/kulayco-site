@@ -143,6 +143,41 @@ a {
 }
 
 // -----------------------------------------------------------------------------
+// Waitlist section CTA (links to /waitlist)
+// -----------------------------------------------------------------------------
+
+.waitlist__cta-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  margin-top: 8px;
+}
+
+.waitlist__cta-btn {
+  display: inline-block;
+  padding: 14px 32px;
+  background: $accent;
+  color: #fff !important;
+  font-weight: 800;
+  font-size: 18px;
+  border-radius: 100px;
+  letter-spacing: -0.01em;
+  transition: opacity 0.15s ease, transform 0.15s ease;
+
+  &:hover {
+    opacity: 0.9;
+    transform: translateY(-1px);
+  }
+}
+
+.waitlist__cta-note {
+  font-size: 14px;
+  color: $muted;
+  margin: 0;
+}
+
+// -----------------------------------------------------------------------------
 // Animated hero visual
 // -----------------------------------------------------------------------------
 
@@ -637,6 +672,62 @@ a {
   width: 100%;
   max-width: 480px;
   margin-top: 8px;
+}
+
+// -----------------------------------------------------------------------------
+// Dedicated waitlist page (/waitlist)
+// -----------------------------------------------------------------------------
+
+.waitlist-page {
+  flex: 1;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: clamp(56px, 8vw, 96px) clamp(24px, 6vw, 48px);
+}
+
+.waitlist-page__inner {
+  max-width: 600px;
+  width: 100%;
+}
+
+.waitlist-page__eyebrow {
+  font-size: 13px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: $accent;
+  margin: 0 0 20px;
+}
+
+.waitlist-page__headline {
+  font-size: clamp(38px, 6vw, 64px);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1.05;
+  margin: 0 0 20px;
+}
+
+.waitlist-page__pitch {
+  font-size: clamp(17px, 2vw, 20px);
+  color: $muted;
+  line-height: 1.6;
+  margin: 0 0 40px;
+  max-width: 52ch;
+}
+
+.waitlist-page__form {
+  margin-bottom: 32px;
+}
+
+.waitlist-page__back {
+  font-size: 14px;
+  margin: 0;
+
+  a {
+    color: $muted;
+    &:hover { color: $accent; opacity: 1; }
+  }
 }
 
 // -----------------------------------------------------------------------------
