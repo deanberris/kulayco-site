@@ -458,6 +458,153 @@ a {
   }
 }
 
+.screenshots__cta {
+  text-align: center;
+  margin-top: clamp(32px, 5vw, 56px);
+
+  &-btn {
+    display: inline-block;
+    background: $accent;
+    color: #fff;
+    font-weight: 700;
+    font-size: 16px;
+    padding: 14px 32px;
+    border-radius: 100px;
+    text-decoration: none;
+    transition: opacity 0.15s ease, transform 0.15s ease;
+
+    &:hover {
+      opacity: 0.85;
+      transform: translateY(-1px);
+    }
+  }
+}
+
+// Turf wars section
+.turf {
+  padding: clamp(60px, 8vw, 120px) clamp(20px, 5vw, 60px);
+  background: $ink;
+  color: #fff;
+
+  &__inner {
+    max-width: 680px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  &__title {
+    font-size: clamp(28px, 4vw, 48px);
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    margin: 0 0 24px;
+  }
+
+  &__body {
+    font-size: clamp(16px, 1.8vw, 20px);
+    line-height: 1.65;
+    color: rgba(#fff, 0.8);
+    margin: 0 0 20px;
+  }
+
+  &__cta {
+    display: inline-block;
+    margin-top: 16px;
+    background: $accent;
+    color: #fff;
+    font-weight: 700;
+    font-size: 16px;
+    padding: 14px 32px;
+    border-radius: 100px;
+    text-decoration: none;
+    transition: opacity 0.15s ease, transform 0.15s ease;
+
+    &:hover {
+      opacity: 0.85;
+      transform: translateY(-1px);
+    }
+  }
+}
+
+// Walking habit section
+.habit {
+  padding: clamp(60px, 8vw, 100px) clamp(20px, 5vw, 60px);
+  background: #F0EDE8;
+
+  &__inner {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  &__title {
+    font-size: clamp(24px, 3.5vw, 40px);
+    font-weight: 800;
+    letter-spacing: -0.015em;
+    margin: 0 0 20px;
+  }
+
+  &__body {
+    font-size: clamp(16px, 1.8vw, 20px);
+    line-height: 1.65;
+    color: $muted;
+    margin: 0 0 28px;
+  }
+
+  &__cta {
+    display: inline-block;
+    background: $ink;
+    color: #fff;
+    font-weight: 700;
+    font-size: 16px;
+    padding: 14px 32px;
+    border-radius: 100px;
+    text-decoration: none;
+    transition: opacity 0.15s ease, transform 0.15s ease;
+
+    &:hover {
+      opacity: 0.85;
+      transform: translateY(-1px);
+    }
+  }
+}
+
+// FOMO closer section
+.fomo {
+  padding: clamp(60px, 8vw, 100px) clamp(20px, 5vw, 60px);
+  text-align: center;
+
+  &__inner {
+    max-width: 560px;
+    margin: 0 auto;
+  }
+
+  &__line {
+    font-size: clamp(20px, 3vw, 32px);
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    margin: 0 0 8px;
+
+    &:last-of-type { margin-bottom: 32px; }
+  }
+
+  &__cta {
+    display: inline-block;
+    background: $accent;
+    color: #fff;
+    font-weight: 700;
+    font-size: 16px;
+    padding: 14px 32px;
+    border-radius: 100px;
+    text-decoration: none;
+    transition: opacity 0.15s ease, transform 0.15s ease;
+
+    &:hover {
+      opacity: 0.85;
+      transform: translateY(-1px);
+    }
+  }
+}
+
 .phone__frame {
   width: 100%;
   max-width: 260px;
