@@ -481,6 +481,14 @@ a {
   }
 }
 
+.phone__screen-img {
+  width: 100%;
+  height: 100%;
+  border-radius: 30px;
+  object-fit: cover;
+  display: block;
+}
+
 .phone__screen {
   width: 100%;
   height: 100%;

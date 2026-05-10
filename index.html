@@ -58,36 +58,24 @@ layout: default
 
   <section class="screenshots" aria-label="App previews">
     <h2 class="screenshots__title">A look inside</h2>
-    <p class="screenshots__subtitle">Real screenshots land once the iOS Simulator runtime is installed. Wireframes for now.</p>
     <div class="screenshots__row">
       <figure class="phone">
         <div class="phone__frame">
-          <div class="phone__screen phone__screen--map">
-            <div class="phone__blob phone__blob--a"></div>
-            <div class="phone__blob phone__blob--b"></div>
-            <div class="phone__blob phone__blob--c"></div>
-            <div class="phone__swirl"></div>
-          </div>
+          <img class="phone__screen-img" src="{{ '/assets/screenshots/01-map-view.png' | relative_url }}" alt="Map view with pinned colour blobs">
         </div>
         <figcaption>Map with pinned colours</figcaption>
       </figure>
       <figure class="phone">
         <div class="phone__frame">
-          <div class="phone__screen phone__screen--picker">
-            <div class="phone__wheel"></div>
-          </div>
+          <img class="phone__screen-img" src="{{ '/assets/screenshots/02-colour-picker.png' | relative_url }}" alt="Circular colour picker open">
         </div>
         <figcaption>Colour picker open</figcaption>
       </figure>
       <figure class="phone">
         <div class="phone__frame">
-          <div class="phone__screen phone__screen--overlap">
-            <div class="phone__blob phone__blob--big-a"></div>
-            <div class="phone__blob phone__blob--big-b"></div>
-            <div class="phone__blob phone__blob--big-c"></div>
-          </div>
+          <img class="phone__screen-img" src="{{ '/assets/screenshots/03-swirl-avatar.png' | relative_url }}" alt="Swirl avatar close-up">
         </div>
-        <figcaption>Overlapping entries</figcaption>
+        <figcaption>Swirl avatar</figcaption>
       </figure>
     </div>
   </section>
