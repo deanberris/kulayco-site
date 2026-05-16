@@ -75,13 +75,6 @@ a {
   width: 100%;
 }
 
-.hero__visual-note {
-  margin: 0;
-  color: $muted;
-  font-size: 13px;
-  font-weight: 600;
-  letter-spacing: 0.02em;
-}
 
 .hero__copy {
   max-width: 620px;
@@ -205,105 +198,78 @@ a {
   -webkit-mask-image: radial-gradient(circle at 50% 50%, black 55%, transparent 100%);
 }
 
-.blob {
+// SVG hex map fills the .map container
+.hex-map {
   position: absolute;
-  width: 42%;
-  aspect-ratio: 1 / 1;
-  border-radius: 50%;
-  filter: blur(0.4px);
-  opacity: 0.55;
-  mix-blend-mode: multiply;
-  transform: scale(0.9);
-  animation: blob-pulse 6s ease-in-out infinite;
-
-  &--coral   { background: $blob-coral;   top: 18%; left: 12%; animation-delay: 0s;   }
-  &--blue    { background: $blob-blue;    top: 58%; left: 22%; animation-delay: 1.2s; }
-  &--yellow  { background: $blob-yellow;  top: 14%; left: 52%; animation-delay: 2.4s; }
-  &--violet  { background: $blob-violet;  top: 50%; left: 52%; animation-delay: 3.6s; opacity: 0; animation: blob-appear 8s ease-in-out infinite; }
+  inset: 0;
+  width: 100%;
+  height: 100%;
 }
 
-@keyframes blob-pulse {
-  0%, 100% { transform: scale(0.9); opacity: 0.45; }
-  50%      { transform: scale(1.05); opacity: 0.6; }
+.hex--static {
+  transition: none;
 }
 
-@keyframes blob-appear {
-  0%, 55%  { transform: scale(0); opacity: 0; }
-  70%      { transform: scale(1.1); opacity: 0.6; }
-  100%     { transform: scale(1); opacity: 0.55; }
+// Trail: solid stroke draws in from start over 3 s, then holds 3–6 s, loops
+@keyframes trail-draw {
+  0%   { stroke-dashoffset: 558; }
+  50%  { stroke-dashoffset: 0; }
+  100% { stroke-dashoffset: 0; }
 }
 
-.swirl {
-  position: absolute;
-  top: 50%; left: 50%;
-  width: 58px; height: 58px;
-  border-radius: 50%;
-  transform: translate(-50%, -50%);
-  background:
-    conic-gradient(from 0deg,
-      $blob-coral,
-      $blob-yellow,
-      $blob-green,
-      $blob-blue,
-      $blob-violet,
-      $blob-coral);
-  box-shadow: 0 6px 18px -4px rgba(26, 26, 26, 0.25);
-  animation: swirl-breathe 3.2s ease-in-out infinite;
+// Solid trail fades out just after it finishes drawing
+@keyframes trail-draw-opacity {
+  0%, 50%  { opacity: 1; }
+  54%       { opacity: 0; }
+  100%      { opacity: 0; }
 }
 
-.swirl__ring {
-  position: absolute;
-  inset: -8px;
-  border-radius: 50%;
-  border: 2px solid $ink;
-  opacity: 0.12;
-  animation: swirl-ring 3.2s ease-out infinite;
+// Dotted trail cross-fades in once solid is done, fades before loop restart
+@keyframes trail-dots-opacity {
+  0%, 50%  { opacity: 0; }
+  54%       { opacity: 1; }
+  92%       { opacity: 1; }
+  100%      { opacity: 0; }
 }
 
-@keyframes swirl-breathe {
-  0%, 100% { transform: translate(-50%, -50%) scale(1) rotate(0deg); }
-  50%      { transform: translate(-50%, -50%) scale(1.08) rotate(180deg); }
-  100%     { transform: translate(-50%, -50%) scale(1) rotate(360deg); }
+.hex-trail-draw {
+  stroke-dasharray: 558 558;
+  stroke-dashoffset: 558;
+  animation:
+    trail-draw 6s ease-in-out infinite,
+    trail-draw-opacity 6s linear infinite;
 }
 
-@keyframes swirl-ring {
-  0%   { transform: scale(0.9); opacity: 0.3; }
-  100% { transform: scale(1.8); opacity: 0; }
-}
-
-.wheel {
-  position: absolute;
-  top: 50%; left: 50%;
-  width: 40%;
-  aspect-ratio: 1 / 1;
-  border-radius: 50%;
-  transform: translate(-50%, -50%) scale(0);
-  box-shadow: 0 20px 40px -12px rgba(26, 26, 26, 0.25);
+.hex-trail-dots {
   opacity: 0;
-  animation: wheel-bloom 8s ease-in-out infinite;
-  background: conic-gradient(from 0deg,
-    $blob-coral,
-    $blob-yellow,
-    $blob-green,
-    $blob-blue,
-    $blob-violet,
-    $blob-coral);
-  border: 4px solid #fff;
+  animation: trail-dots-opacity 6s linear infinite;
 }
 
-@keyframes wheel-bloom {
-  0%, 30%  { transform: translate(-50%, -50%) scale(0); opacity: 0; }
-  40%      { transform: translate(-50%, -50%) scale(1); opacity: 0.95; }
-  55%      { transform: translate(-50%, -50%) scale(1); opacity: 0.95; }
-  65%      { transform: translate(-50%, -50%) scale(0); opacity: 0; }
-  100%     { transform: translate(-50%, -50%) scale(0); opacity: 0; }
+// Flood hexes: hidden, then pop in staggered after trail closes (~3.2 s)
+@keyframes hex-flood {
+  0%, 53%  { fill-opacity: 0; transform: scale(0.6); }
+  60%       { fill-opacity: 0.7; transform: scale(1); }
+  91.7%     { fill-opacity: 0.7; transform: scale(1); }
+  100%      { fill-opacity: 0; transform: scale(1); }
 }
+
+.hex--flood {
+  fill-opacity: 0;
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: hex-flood 6s ease-out infinite;
+}
+
+.hex--flood-1 { animation-delay: 0s; }
+.hex--flood-2 { animation-delay: 0.15s; }
+.hex--flood-3 { animation-delay: 0.30s; }
+.hex--flood-4 { animation-delay: 0.45s; }
 
 @media (prefers-reduced-motion: reduce) {
-  .blob, .swirl, .swirl__ring, .wheel, .confirm__badge {
-    animation: none !important;
-  }
-  .wheel { opacity: 0; }
+  .hex-trail-draw    { animation: none; stroke-dashoffset: 0; opacity: 1; }
+  .hex-trail-dots    { animation: none; opacity: 0; }
+  .hex--flood        { animation: none; fill-opacity: 0.7; transform: scale(1); }
+  .confirm__badge    { animation: none !important; }
 }
 
 // -----------------------------------------------------------------------------

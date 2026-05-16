@@ -14,16 +14,65 @@ layout: default
     <div class="hero__visual" aria-hidden="true">
       <div class="map">
         <div class="map__grid"></div>
-        <div class="blob blob--coral"></div>
-        <div class="blob blob--blue"></div>
-        <div class="blob blob--yellow"></div>
-        <div class="blob blob--violet"></div>
-        <div class="swirl">
-          <div class="swirl__ring"></div>
-        </div>
-        <div class="wheel" aria-hidden="true"></div>
+        <svg class="hex-map" viewBox="0 0 520 520" xmlns="http://www.w3.org/2000/svg">
+          <!-- Background hex grid (stroke only) -->
+          <g class="hex--static" fill="none" stroke="rgba(26,26,26,0.12)" stroke-width="1">
+            <polygon points="127,112 108,145 70,145 51,112 70,79 108,79"/>
+            <polygon points="127,310 108,343 70,343 51,310 70,277 108,277"/>
+            <polygon points="127,376 108,409 70,409 51,376 70,343 108,343"/>
+            <polygon points="184,343 165,376 127,376 108,343 127,310 165,310"/>
+            <polygon points="184,409 165,442 127,442 108,409 127,376 165,376"/>
+            <polygon points="241,112 222,145 184,145 165,112 184,79 222,79"/>
+            <polygon points="241,244 222,277 184,277 165,244 184,211 222,211"/>
+            <polygon points="298,145 279,178 241,178 222,145 241,112 279,112"/>
+            <polygon points="298,211 279,244 241,244 222,211 241,178 279,178"/>
+            <polygon points="298,277 279,310 241,310 222,277 241,244 279,244"/>
+            <polygon points="298,409 279,442 241,442 222,409 241,376 279,376"/>
+            <polygon points="355,112 336,145 298,145 279,112 298,79 336,79"/>
+            <polygon points="355,310 336,343 298,343 279,310 298,277 336,277"/>
+            <polygon points="412,145 393,178 355,178 336,145 355,112 393,112"/>
+            <polygon points="469,112 450,145 412,145 393,112 412,79 450,79"/>
+            <polygon points="469,178 450,211 412,211 393,178 412,145 450,145"/>
+            <polygon points="469,244 450,277 412,277 393,244 412,211 450,211"/>
+            <polygon points="469,310 450,343 412,343 393,310 412,277 450,277"/>
+          </g>
+          <!-- Player A territory — coral (static) -->
+          <g class="hex--static" fill="#FF6B4A" fill-opacity="0.7" stroke="#FF6B4A" stroke-width="0.5" stroke-opacity="0.4">
+            <polygon points="127,178 108,211 70,211 51,178 70,145 108,145"/>
+            <polygon points="127,244 108,277 70,277 51,244 70,211 108,211"/>
+            <polygon points="184,145 165,178 127,178 108,145 127,112 165,112"/>
+            <polygon points="184,211 165,244 127,244 108,211 127,178 165,178"/>
+            <polygon points="184,277 165,310 127,310 108,277 127,244 165,244"/>
+            <polygon points="241,178 222,211 184,211 165,178 184,145 222,145"/>
+          </g>
+          <!-- Player B territory — blue (static) -->
+          <g class="hex--static" fill="#4A8BFF" fill-opacity="0.5" stroke="#4A8BFF" stroke-width="0.5" stroke-opacity="0.3">
+            <polygon points="355,376 336,409 298,409 279,376 298,343 336,343"/>
+            <polygon points="412,343 393,376 355,376 336,343 355,310 393,310"/>
+            <polygon points="412,409 393,442 355,442 336,409 355,376 393,376"/>
+            <polygon points="469,376 450,409 412,409 393,376 412,343 450,343"/>
+          </g>
+          <!-- Player C territory — violet (static) -->
+          <g class="hex--static" fill="#A070FF" fill-opacity="0.5" stroke="#A070FF" stroke-width="0.5" stroke-opacity="0.3">
+            <polygon points="241,310 222,343 184,343 165,310 184,277 222,277"/>
+            <polygon points="298,343 279,376 241,376 222,343 241,310 279,310"/>
+            <polygon points="241,376 222,409 184,409 165,376 184,343 222,343"/>
+          </g>
+          <!-- Flood-fill hexes — coral, animate in after trail closes -->
+          <polygon class="hex--flood hex--flood-1" fill="#FF6B4A" points="355,178 336,211 298,211 279,178 298,145 336,145"/>
+          <polygon class="hex--flood hex--flood-2" fill="#FF6B4A" points="412,211 393,244 355,244 336,211 355,178 393,178"/>
+          <polygon class="hex--flood hex--flood-3" fill="#FF6B4A" points="355,244 336,277 298,277 279,244 298,211 336,211"/>
+          <polygon class="hex--flood hex--flood-4" fill="#FF6B4A" points="412,277 393,310 355,310 336,277 355,244 393,244"/>
+          <!-- Trail solid (draws in from start over 3 s) -->
+          <polyline class="hex-trail-draw"
+            fill="none" stroke="#FF6B4A" stroke-width="3" stroke-linecap="round"
+            points="260,211 317,112 374,145 431,178 431,244 431,310 317,310 260,277"/>
+          <!-- Trail dots (cross-fades in once solid trail is drawn) -->
+          <polyline class="hex-trail-dots"
+            fill="none" stroke="#FF6B4A" stroke-width="3" stroke-dasharray="8 6" stroke-linecap="round"
+            points="260,211 317,112 374,145 431,178 431,244 431,310 317,310 260,277"/>
+        </svg>
       </div>
-      <p class="hero__visual-note">Animated preview &mdash; real footage coming soon.</p>
     </div>
   </section>
 
