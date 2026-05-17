@@ -260,10 +260,18 @@ a {
   animation: hex-flood 6s ease-out infinite;
 }
 
-.hex--flood-1 { animation-delay: 0s; }
-.hex--flood-2 { animation-delay: 0.15s; }
-.hex--flood-3 { animation-delay: 0.30s; }
-.hex--flood-4 { animation-delay: 0.45s; }
+// Trail hexes appear first (3.0s–3.5s into the 6s cycle; delay = target_time − 3.18s)
+.hex--flood-trail-1 { animation-delay: -0.18s; }
+.hex--flood-trail-2 { animation-delay: -0.08s; }
+.hex--flood-trail-3 { animation-delay:  0.02s; }
+.hex--flood-trail-4 { animation-delay:  0.12s; }
+.hex--flood-trail-5 { animation-delay:  0.22s; }
+.hex--flood-trail-6 { animation-delay:  0.32s; }
+// Interior enclosed hexes flood in after trail (3.65s–4.10s into the cycle)
+.hex--flood-1 { animation-delay: 0.47s; }
+.hex--flood-2 { animation-delay: 0.62s; }
+.hex--flood-3 { animation-delay: 0.77s; }
+.hex--flood-4 { animation-delay: 0.92s; }
 
 @media (prefers-reduced-motion: reduce) {
   .hex-trail-draw    { animation: none; stroke-dashoffset: 0; opacity: 1; }

@@ -58,7 +58,14 @@ layout: default
             <polygon points="298,343 279,376 241,376 222,343 241,310 279,310"/>
             <polygon points="241,376 222,409 184,409 165,376 184,343 222,343"/>
           </g>
-          <!-- Flood-fill hexes — coral, animate in after trail closes -->
+          <!-- Trail hexes — coral, animate in as trail closes (before interior floods) -->
+          <polygon class="hex--flood hex--flood-trail-1" fill="#FF6B4A" points="355,112 336,145 298,145 279,112 298,79 336,79"/>
+          <polygon class="hex--flood hex--flood-trail-2" fill="#FF6B4A" points="412,145 393,178 355,178 336,145 355,112 393,112"/>
+          <polygon class="hex--flood hex--flood-trail-3" fill="#FF6B4A" points="469,178 450,211 412,211 393,178 412,145 450,145"/>
+          <polygon class="hex--flood hex--flood-trail-4" fill="#FF6B4A" points="469,244 450,277 412,277 393,244 412,211 450,211"/>
+          <polygon class="hex--flood hex--flood-trail-5" fill="#FF6B4A" points="469,310 450,343 412,343 393,310 412,277 450,277"/>
+          <polygon class="hex--flood hex--flood-trail-6" fill="#FF6B4A" points="355,310 336,343 298,343 279,310 298,277 336,277"/>
+          <!-- Interior enclosed hexes — flood in after trail hexes -->
           <polygon class="hex--flood hex--flood-1" fill="#FF6B4A" points="355,178 336,211 298,211 279,178 298,145 336,145"/>
           <polygon class="hex--flood hex--flood-2" fill="#FF6B4A" points="412,211 393,244 355,244 336,211 355,178 393,178"/>
           <polygon class="hex--flood hex--flood-3" fill="#FF6B4A" points="355,244 336,277 298,277 279,244 298,211 336,211"/>
